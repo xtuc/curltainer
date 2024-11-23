@@ -1,6 +1,6 @@
 # curltainer
 
-> curl anything running inside a container, even with exposed ports
+> curl anything running inside a Docker container, even with no exposed ports
 
 ## Install
 
@@ -25,15 +25,15 @@ Options:
 
 ## How it works?
 
-Start a container with a HTTP server, with no ports exposed to the host:
+Start a Docker container with a HTTP server, with no ports exposed to the host:
 ```
 $ docker run -d python python -m http.server 9000
-a8c8e97ff4f06e8e92c10d41f3764c96a900a098559a946e070c4845219a5007
+a8c8e9...
 ```
 
 curl the server running inside the container from the host:
 ```
-$ sudo curltainer -c a8c8e97ff4f06e8e92c10d41f3764c96a900a098559a946e070c4845219a5007 localhost:9000  -v
+$ sudo curltainer -c a8c8e9... localhost:9000  -v
 
 *   Trying 127.0.0.1:9000...
 * Connected to localhost (127.0.0.1) port 9000 (#0)
