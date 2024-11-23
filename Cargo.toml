@@ -1,0 +1,16 @@
+[package]
+name = "curltainer"
+version = "1.0.0"
+edition = "2021"
+authors = ["Sven Sauleau <sven@sauleau.com>"]
+publish = true
+description = "curl anything running inside a container, even with exposed ports"
+keywords = ["curl", "docker", "network", "namespace"]
+repository = "https://github.com/xtuc/curltainer"
+license = "MIT"
+
+[dependencies]
+bollard = "0.18.1"
+clap = { version = "4.5.21", features = ["derive"] }
+nix = { version = "0.29.0", features = ["sched"] }
+tokio = { version = "1.41.1", features = ["rt-multi-thread", "macros"] }
